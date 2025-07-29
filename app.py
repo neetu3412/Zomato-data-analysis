@@ -54,4 +54,7 @@ def get_data():
 # Run the Flask app on localhost:5000
 # -----------------------------
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+    import os
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host='0.0.0.0', port=port)
+# modify the backend code for deploy on the google could so that streamlit can get it easly
